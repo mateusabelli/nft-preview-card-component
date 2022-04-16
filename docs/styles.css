@@ -1,0 +1,205 @@
+/* Variables */
+:root {
+  --clr-primary-300: hsl(178, 100%, 50%);
+  --clr-primary-400: hsl(215, 51%, 70%);
+
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-600: hsl(215, 32%, 27%);
+  --clr-neutral-700: hsl(216, 50%, 16%);
+  --clr-neutral-800: hsl(217, 54%, 11%);
+
+  --ff-default: "Outfit", sans-serif;
+
+  --fs-300: 0.95rem;
+  --fs-400: 1rem;
+  --fs-500: 1.125rem;
+  --fs-600: 1.4rem;
+
+  --fw-300: 300;
+  --fw-400: 400;
+  --fw-600: 600;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+/* Base styles */
+body {
+  background-color: var(--clr-neutral-800);
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  padding: 0 1rem;
+  font-family: var(--ff-default);
+  font-weight: var(--fw-300);
+  color: var(--clr-primary-400);
+  line-height: 1.75rem;
+}
+
+hr {
+  border: 0;
+  height: 0;
+  border-bottom: 1px solid var(--clr-neutral-600);
+}
+
+.container {
+  position: relative;
+}
+
+/* Button styles */
+
+.buttons > button {
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 4rem;
+  background-color: transparent;
+  border: none;
+  color: var(--clr-primary-400);
+}
+
+.previous {
+  position: absolute;
+  left: -1.5rem;
+}
+
+.next {
+  position: absolute;
+  right: -1.5rem;
+}
+
+/* Component styles*/
+.card {
+  max-width: 20rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background-color: var(--clr-neutral-700);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.card > .content > * {
+  margin-top: 0.75em;
+}
+
+.card > .image-container {
+  width: 100%;
+  aspect-ratio: 1;
+  background-color: var(--clr-neutral-600);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.card > .image-container:hover {
+  cursor: pointer;
+  
+}
+
+.card > .content > .title {
+  font-size: var(--fs-600);
+  font-weight: var(--fw-500);
+  color: var(--clr-neutral-100);
+}
+
+.card > .content > .title:focus,
+.card > .content > .title:hover {
+  color: var(--clr-primary-300);
+  cursor: pointer;
+}
+
+.card > .content > .description {
+  font-size: var(--fs-400);
+}
+
+.card > .content > .pricing {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--fs-400);
+  font-weight: var(--fw-400);
+  width: 100%;
+}
+
+.card > .content > .pricing > .price,
+.card > .content > .pricing > .expiration {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-weight: var(--fw-300);
+  font-size: var(--fs-300);
+}
+
+.card > .content > .pricing > .price {
+  color: var(--clr-primary-300);
+  font-weight: var(--fw-600);
+}
+
+.card > .content > .pricing > * > img {
+  width: auto;
+}
+
+.card > .content > .footer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.card > .content > .footer > .avatar-container {
+  width: 2rem;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  background-color: var(--clr-neutral-600);
+  outline: 1px solid var(--clr-neutral-100);
+  overflow: hidden;
+}
+
+.card > .content > .footer > * > .author {
+  color: var(--clr-neutral-100);
+}
+
+.card > .content > .footer > * > .author:focus,
+.card > .content > .footer > * > .author:hover {
+  color: var(--clr-primary-300);
+  cursor: pointer;
+}
+
+/* Indicators styles */
+.indicators {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.indicators > * {
+  width: 0.75rem;
+  aspect-ratio: 1;
+  background-color: var(--clr-neutral-600);
+  border-radius: 100%;
+}
+
+.indicators > .active {
+  background-color: var(--clr-primary-400);
+}
+
+@media (min-width: 25rem) {
+  .buttons > .previous {
+    left: -4rem;
+    cursor: pointer;
+  }
+
+  .buttons > .next {
+    right: -4rem;
+    cursor: pointer;
+  }
+}
